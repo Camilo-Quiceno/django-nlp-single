@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+__pycache__/
 
 # C extensions
 *.so
@@ -60,6 +63,11 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+static/
+media/
+settings_local.py
+*.sqlite3
+db.sqlite3
 
 # Flask stuff:
 instance/
