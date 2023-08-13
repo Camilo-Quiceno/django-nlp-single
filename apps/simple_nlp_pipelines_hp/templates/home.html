@@ -6,6 +6,19 @@
 <div class="row">
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Input Text</label>
+        <form action="/form_selection/", method="GET">{% csrf_token %}
+            <select class="form-select" id="form_select" name="form_select" onchange="this.form.submit()">
+                <option selected>Natural Language Processings</option>
+                <option value="1" {% if selected_value == "1" %} selected {% endif %}>Sumarizer</option>
+                <option value="2" {% if selected_value == "2" %} selected {% endif %}>Question Answering</option>
+                <option value="3" {% if selected_value == "3" %} selected {% endif %}>Name Entity Recognition</option>
+                <option value="4" {% if selected_value == "4" %} selected {% endif %}>Part-of-Speech Tagging</option>
+                <option value="5" {% if selected_value == "5" %} selected {% endif %}>Sentiment Analizer</option>
+                <option value="6" {% if selected_value == "6" %} selected {% endif %}>Text Generation</option>
+                <option value="7" {% if selected_value == "7" %} selected {% endif %}>Text Translation</option>
+            </select>
+        </form>
+       
         <form action="/register_input/", method="POST">{% csrf_token %}
             <div class="form-group">
                 <textarea class="form-control" id="text_area" name="text_area" rows="3"></textarea>
