@@ -37,7 +37,7 @@
     
     {% for message in messages %}
         {%if "pipeline_output" in message.tags %}
-        <strong class="text-dark">{{ message }}</strong>
+        <strong class="text-dark">{{ message|linebreaksbr }}</strong>
         {%endif%}
     {% endfor %}
     
