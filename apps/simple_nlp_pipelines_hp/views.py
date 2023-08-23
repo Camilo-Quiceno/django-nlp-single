@@ -33,7 +33,7 @@ def register_input(request):
         case _:
             text = "Caso predeterminado"
     
-    messages.success(request, output)
+    messages.success(request, output, extra_tags='pipeline_output')
     return redirect('/', RequestContext(request))
 
 def form_selection(request):
@@ -60,5 +60,5 @@ def form_selection(request):
     
     request.session['pipeline_selected'] = form_select
     context = {'selected_value': form_select}
-    messages.success(request, text)
+    messages.success(request, text, extra_tags='form_selection')
     return render(request, 'home.html', context)

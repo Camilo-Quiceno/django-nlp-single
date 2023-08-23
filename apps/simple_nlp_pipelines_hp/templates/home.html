@@ -18,7 +18,11 @@
                 <option value="7" {% if selected_value == "7" %} selected {% endif %}>Text Translation</option>
             </select>
         </form>
-       
+        {% for message in messages %}
+            {%if "form_select" in message.tags %}
+            <strong class="text-dark">{{ message }}</strong>
+            {%endif%}
+        {% endfor %}
         <form action="/register_input/", method="POST">{% csrf_token %}
             <div class="form-group">
                 <textarea class="form-control" id="text_area" name="text_area" rows="3"></textarea>
@@ -30,10 +34,12 @@
       </div>
 </div>
 <div>
-    {% if messages %} 
-        {% for message in messages %}
+    
+    {% for message in messages %}
+        {%if "pipeline_output" in message.tags %}
         <strong class="text-dark">{{ message }}</strong>
-        {% endfor %}
-    {% endif %}
+        {%endif%}
+    {% endfor %}
+    
 </div>
 {% endblock %}
