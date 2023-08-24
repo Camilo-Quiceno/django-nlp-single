@@ -130,19 +130,19 @@ def form_selection(request):
     
     match form_select:
         case "1":
-            text = "The input to this task is a corpus of text and the model will output a summary of it based on the expected length mentioned in the parameters. Here, we have kept minimum length as 5 and maximum length as 30."
+            text = "The input to this task is a corpus of text and the model will output a summary of it based on the expected length mentioned in the parameters. Here, we have kept minimum length as 5 and maximum length as 30. \n\nExample:\n\nParents need to know that Top Gun is a blockbuster 1980s action thriller starring Tom Cruise that's chock full of narrow escapes, chases, and battles. But there are also violent and upsetting scenes, particularly the death of a main character, which make it too intense for younger kids. There's also one graphic-for-its-time sex scene (though no explicit nudity) and quite a few shirtless men in locker rooms and, in one iconic sequence, on a beach volleyball court. Winning is the most important thing to all the pilots, who try to intimidate one another with plenty of posturing and banter -- though when push comes to shove, loyalty and friendship have important roles to play, too. While sexism is noticeable and almost all characters are men, two strong women help keep some of the objectification in check."
         case "2":
-            text = "In this task, we provide a question and a context ( Separate the question and the context by a comma ',' ). The model will choose the answer from the context based on the highest probability score. It also provides the starting and ending positions of the text. \n\nExample:\n\n Where do I work?, I work as a Data Scientist at a lab in University of Montreal. I like to develop my own algorithms."
+            text = "In this task, we provide a question and a context ( Separate the question and the context by a comma ',' ). The model will choose the answer from the context based on the highest probability score. It also provides the starting and ending positions of the text. \n\nExample:\n\nWhere do I work?, I work as a Data Scientist at a lab in University of Montreal. I like to develop my own algorithms."
         case "3":
-            text = "Named Entity Recognition deals with identifying and classifying the words based on the names of persons, organizations, locations and so on. The input is basically a sentence and the model will determine the named entity along with its category and its corresponding location in the text. "
+            text = "Named Entity Recognition deals with identifying and classifying the words based on the names of persons, organizations, locations and so on. The input is basically a sentence and the model will determine the named entity along with its category and its corresponding location in the text. \n\nExample:\n\nJohn and Jane like to travel around Spain by train."
         case "4":
-            text = "PoS Tagging is useful to classify the text and provide its relevant parts of speech such as whether a word is a noun, pronoun, verb and so on. The model returns PoS tagged words along with their probability scores and respective locations."
+            text = "PoS Tagging is useful to classify the text and provide its relevant parts of speech such as whether a word is a noun, pronoun, verb and so on. The model returns PoS tagged words along with their probability scores and respective locations. \n\nExample:\n\nI am an artist and I live in Dublin"
         case "5":
-            text = "We will perform sentiment analysis and classify the text based on the tone."
+            text = "We will perform sentiment analysis and classify the text based on the tone. \n\nExample:\n\nThis movie is my favorite!"
         case "6":
-            text = "Text will be generated base on your input."
+            text = "Text will be generated base on your input. \n\nExample:\n\nIf it is sunny today then "
         case "7":
-            text = "Here, we will translate the language of text from one language to another. English -> French"
+            text = "Here, we will translate the language of text from one language to another. English -> French. \n\nExample:\n\nHi, How are you?"
         case _:
             text = "Default"
     
