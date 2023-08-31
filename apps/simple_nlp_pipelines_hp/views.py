@@ -38,10 +38,10 @@ def register_input(request):
                                 )
                 answer_qa = output_question_answering['answer']
                 score_qa = output_question_answering['score']
-                output = f'The answer of the question is: {answer_qa} with a score of: {score_qa}'
+                output = f'The answer of the question is: {answer_qa} with a score of: {round(score_qa, 2)}'
             except:
                 error = True
-                error_text = "Incorrect Input"          
+                error_text = "Incorrect Input, try again."          
             
         case "3":
             try:
@@ -59,7 +59,7 @@ def register_input(request):
                         output += single_output
             except:
                 error = True
-                error_text = "Something wrong, try again" 
+                error_text = "Something wrong, try again." 
                     
         case "4":
             try:
@@ -77,7 +77,7 @@ def register_input(request):
                         output += single_output
             except:
                 error = True
-                error_text = "Something wrong, try again" 
+                error_text = "Something wrong, try again." 
                     
             
         case "5":
@@ -90,7 +90,7 @@ def register_input(request):
                 output = f'The text is classified as: {label_classfier.capitalize()} with a score of {score_classifier}'
             except:
                 error = True
-                error_text = "Something wrong, try again" 
+                error_text = "Something wrong, try again." 
             
         case "6":
             try:
@@ -100,7 +100,7 @@ def register_input(request):
                 output = f'The text generated is: {generated_text}'
             except:
                 error = True
-                error_text = "Something wrong, try again" 
+                error_text = "Something wrong, try again." 
             
         case "7":
             try:
@@ -111,7 +111,7 @@ def register_input(request):
                 output = f'The text translated is: {text_translated}'
             except:
                 error = True
-                error_text = "Something wrong, try again" 
+                error_text = "Something wrong, try again." 
             
         case _:
             text = "Default"
